@@ -4,9 +4,8 @@
   <tr>
 	<th>   </th>
     <th>Title</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
+    <th>Content </th>
+	<th> Created_by</th>
     <th></th>
   </tr>
 
@@ -15,7 +14,7 @@
 	<td><%= image_tag post.news_photo.url(:thumb) %></td>
     <td><%=link_to post.title,post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
-
+	
 	
   </tr>
 <% end %>
