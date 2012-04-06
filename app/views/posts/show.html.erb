@@ -1,25 +1,32 @@
-<p id="notice"><%= notice %></p>
+<h1>/Post</h1>
 
 <p>
-  <b>Title:</b>
+  <b>Title</b><br>
   <%= @post.title %>
-	<br/>
+</p>
+
+<p>
+  <b>Photo:</b><br>
+  <%= image_tag @post.news_photo.url(:medium) %>
+</p>
+
+<p>
+  <b>Content</b><br>
+  <%=  sanitize (@post.content) %>  <!-- is it safe ? deos sanitize html tag protection --> 
+</p>	
+
+<p>
 	<b>Published:</b>
 	<span class='pub_date'> 
 	<%= @post.created_at.to_date%></span>
 </p>
 
-<p>
-  <b>Photo:</b>
-  <%= image_tag @post.news_photo.url(:medium) %>
-</p>
-<p>
-  <b>Content:</b>
-  <%= @post.content %>
-</p>
+<div class="form-actions">
+  <%= link_to 'Back', posts_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_post_path(@post), :class => 'btn' %>
+  <%= link_to 'Delete', post_path(@post), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>
 
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
-
-<h3>Comments</h3>
+<div class='comments'>
+<%= render :text =>	"comments goes here" %>
+</div>

@@ -1,25 +1,24 @@
-<h1>All Your Local News</h1>
-
-<table>
-  <tr>
-	<th>   </th>
-    <th>Title</th>
-    <th>Content </th>
-	<th> Created_by</th>
-    <th></th>
-  </tr>
-
-<% @posts.each do |post| %>
-  <tr>
-	<td><%= image_tag post.news_photo.url(:thumb) %></td>
-    <td><%=link_to post.title,post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-	
-	
-  </tr>
-<% end %>
+<h1>Posts</h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Created at</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+		<td><%= image_tag post.news_photo.url(:thumb) %></td>
+        <td><%= link_to post.title, post_path(post) %></td>
+        <td><%= post.created_at %></td>
+        <td>
+          <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-mini' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New', new_post_path, :class => 'btn btn-primary' %>
