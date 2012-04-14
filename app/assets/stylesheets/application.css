@@ -5,3 +5,32 @@
  *= require_self
  *= require_tree . 
 */
+
+
+.field_with_errors {
+  display: inline;
+  color:white;
+}
+
+.field_with_errors .message {
+  color: white;
+  padding-left: 5px;
+  font-size: 12px;
+}
+
+#post_content {
+	width:432px;
+	height:262px;
+}
+
+#post_title{
+	width:432px;
+}
+
+#comment_body{
+	width:423px;
+	height:177px;
+}
+
+
+	

@@ -22,3 +22,4 @@ doc/
 .project
 .DS_Store
 .metadata
+./public/system/posts/news_photos

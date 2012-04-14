@@ -16,7 +16,13 @@
 </p>	
 
 <p>
-	<b>Published:</b>
+	<b>Published by:</b>
+	<span class='pub_name'> 
+	<%= @post.user.display_name%></span>
+</p>
+
+<p>
+	<b>Published on:</b>
 	<span class='pub_date'> 
 	<%= @post.created_at.to_date%></span>
 </p>
@@ -26,7 +32,5 @@
   <%= link_to 'Edit', edit_post_path(@post), :class => 'btn' %>
   <%= link_to 'Delete', post_path(@post), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
 </div>
+<%= render  :partial => '/comments/form' %>
 
-<div class='comments'>
-<%= render :text =>	"comments goes here" %>
-</div>
