@@ -25,14 +25,14 @@
 		      </a>
 
 		      <!-- Be sure to leave the brand out there if you want it shown -->
-		      <a class="brand" href="#">Project name</a>
+		      <a class="brand" href="#">MakeChange</a>
 
 		      <!-- Everything you want hidden at 940px or less, place within here -->
 		      <div class="nav-collapse">
 				<ul class="nav">
 		        <!-- .nav, .navbar-search, .navbar-form, etc -->
 				<li><%= link_to "Posts ", posts_path%></li>
-				<li><%= link_to "Most viewed "%></li>
+				<li><%= link_to "New Post ",new_post_path%></li>
 				<li><%= link_to "Latest "%></li>
 				<% if current_user%>
 				<li><%= link_to "Log out" ,logout_path%></li>

@@ -29,8 +29,11 @@
 
 <div class="form-actions">
   <%= link_to 'Back', posts_path, :class => 'btn'  %>
+	<% if current_user and @post.user==current_user%>
   <%= link_to 'Edit', edit_post_path(@post), :class => 'btn' %>
-  <%= link_to 'Delete', post_path(@post), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+  <%= link_to 'Delete', post_path(@post), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn
+ btn-danger' %>
+	<% end %>
 </div>
 <%= render  :partial => '/comments/form' %>
 
