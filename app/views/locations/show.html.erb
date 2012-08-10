@@ -1,0 +1,19 @@
+<h1>Location</h1>
+<p>
+<b>Address</b><br>
+<%= @location.address.camelcase %>
+</p>
+<p>
+<b>Latitude</b><br>
+<%= @location.latitude %>
+</p>
+<p>
+<b>Longitude</b><br>
+<%= @location.longitude %>
+</p>
+<div class="form-actions">
+  <%= link_to 'Back', locations_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_location_path(@location), :class => 'btn' %>
+  <%= link_to 'Delete', location_path(@location), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn
+ btn-danger' %>
+<%= gmaps4rails(@json) %>

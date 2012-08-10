@@ -26,7 +26,24 @@
 	<span class='pub_date'> 
 	<%= @post.created_at.to_date%></span>
 </p>
-
+<div class="location">
+	<h1>Location</h1>
+	<p>
+	<b>Address</b><br>
+	<%= @post.location.address.camelcase %>
+	</p>
+	<p>
+	<b>Latitude</b><br>
+	<%= @post.location.latitude %>
+	</p>
+	<p>
+	<b>Longitude</b><br>
+	<%= @post.location.longitude %>	
+	<%= gmaps("markers" => {"data" => @json},
+	 "map_options" => {"processing" => "json", "auto_adjust" => true,"center_on_user" => true , "auto_zoom" => false, "zoom" => 15}) %>
+	
+	
+</div>
 <div class="form-actions">
   <%= link_to 'Back', posts_path, :class => 'btn'  %>
 	<% if current_user and @post.user==current_user%>

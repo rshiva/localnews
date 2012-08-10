@@ -12,18 +12,22 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
-
+     @json = @post.location.to_gmaps4rails
+     @location=@post.location
   end
 
   # GET /posts/new
   # GET /posts/new.json
   def new
     @post = Post.new
+    @location=@post.build_location
+
   end
 
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @location=@post.location
   end
 
   # POST /posts

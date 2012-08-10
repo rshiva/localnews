@@ -10,6 +10,7 @@ gem 'pg'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 gem "haml-rails"
 gem "client_side_validations"
+gem 'gmaps4rails'
 
 
 
