@@ -1,15 +1,17 @@
 Localnews::Application.routes.draw do
   
+  
+
+  devise_for :users
+
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+
   get "locations/index"
 
   root :to => 'posts#index'
-  get 'signup', :to => 'users#new', as: 'signup'
-  get 'login', :to => 'sessions#new', as: 'login'
-  get 'logout', :to => 'sessions#destroy', as: 'logout'
   
   
   resources :users
-  resources :sessions
   resources :locations
   resources :posts do
     resources :comments
