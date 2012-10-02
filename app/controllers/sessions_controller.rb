@@ -3,6 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def create
+    if request.env["omniauth.auth"]
+      omniauth = request.env["omniauth.auth"]
+      authen = Authen.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])m
+    
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
@@ -18,5 +22,10 @@ class SessionsController < ApplicationController
     redirect_to root_url, notice: "Logged out!"
   end
 
+  def failure
+    flash[:error] = "Invalid Credentials."
+    redirect_to signup_url
+  end
+  
   
 end

@@ -8,6 +8,7 @@ gem 'rails', '3.1.3'
 gem 'sqlite3'
 gem 'pg'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "haml-rails"
 
 
 
@@ -20,6 +21,11 @@ group :assets do
   gem 'twitter-bootstrap-rails'
 end
 
+
+
+#social_authen
+
+gem 'omniauth-twitter'
 
 
 gem 'jquery-rails'

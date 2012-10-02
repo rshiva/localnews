@@ -1,0 +1,19 @@
+%h1 Posts
+%table.table.table-striped
+  %thead
+    %tr
+      %th Image
+      %th Title
+      %th Created at
+      - if current_user
+        %th Actions
+  %tbody
+    - @posts.each do |post|
+      %tr
+        %td= image_tag post.news_photo.url(:thumb)
+        %td= link_to post.title, post_path(post)
+        %td= post.created_at
+        - if current_user
+          %td
+            = link_to 'Edit', edit_post_path(post), :class => 'btn btn-mini'
+= link_to 'New', new_post_path, :class => 'btn btn-primary'

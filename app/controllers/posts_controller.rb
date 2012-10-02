@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_filter :authorize,:except => [:index,:show]
   
   def index
-    @posts = Post.all
+    @posts = Post.all  #need to show the area or city in the homepage
   end
 
   # GET /posts/1
