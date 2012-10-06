@@ -11,3 +11,4 @@
 //= require rails.validations
 //= require gmaps4rails/gmaps4rails.googlemaps
 //= require gmaps4rails/gmaps4rails.base
+
