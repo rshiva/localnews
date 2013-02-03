@@ -6,9 +6,9 @@
 development:
   adapter: postgresql 
   encoding: unicode 
-  database: local_news
+  database: localnews_development
   pool: 5
-  username: postgres
+  username: shiva
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

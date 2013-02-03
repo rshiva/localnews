@@ -1,0 +1,14 @@
+<div class='comments'>
+<% @post.comments.each do |c|%>
+ <p>
+    <b><%=h c.user.display_name %> said:</b><br />
+	<p class ="list_comment"><%= c.body %><p/>
+    <%= time_ago_in_words(c.created_at) %> ago
+  </p>
+
+<% end %>
+
+<%= render :partial => "comments/new_comment" %>
+​
+
+</div>

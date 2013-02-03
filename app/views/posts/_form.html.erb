@@ -5,7 +5,7 @@
     <div class="control-group">
       <%= f.label :title, :class => 'control-label' %>
       <div class="controls">
-        <%= f.text_field :title, :class => 'text_field' %>
+        <%= f.text_field :title,:size =>20, :class => 'text_field' %>
       </div>
     </div>
 
@@ -22,7 +22,11 @@
      	<%=	f.file_field :news_photo , :class => 'text_field' %>
       </div>
     </div>
-
+	
+	<%= f.fields_for :location do |builder| %>
+	<%=  render 'location_fields',f: builder %>
+	<% end%>
+	
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
       <%= link_to 'Cancel', posts_path, :class => 'btn' %>

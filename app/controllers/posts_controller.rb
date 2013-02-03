@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   
-  before_filter :authorize,:except => [:index,:show]
+  before_filter :authenticate_user!,:except => [:index,:show]
   
   def index
     @posts = Post.all
@@ -12,24 +12,29 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+     @json = @post.location.to_gmaps4rails
+     @location=@post.location
   end
 
   # GET /posts/new
   # GET /posts/new.json
   def new
     @post = Post.new
+    @location=@post.build_location
+
   end
 
   # GET /posts/1/edit
   def edit
     @post = Post.find(params[:id])
+    @location=@post.location
   end
 
   # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
-
+    @post.user_id=current_user.id
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -45,7 +50,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
-
+    @post.user_id=current_user.id
     respond_to do |format|
       if @post.update_attributes(params[:post])
        format.html  {redirect_to @post ,  notice: 'Post was successfully Updated.'}

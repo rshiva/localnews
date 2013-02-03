@@ -8,4 +8,8 @@ class Post < ActiveRecord::Base
   validates_attachment_content_type :news_photo, :content_type => ['image/jpeg', 'image/png','image/jpg']
   
   belongs_to :user
+  has_one :location
+  has_many :comments
+  accepts_nested_attributes_for :location,:allow_destroy => true
+  
 end
