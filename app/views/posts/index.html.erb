@@ -2,9 +2,9 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Image</th>
       <th>Title</th>
-      <th>Created at</th>
-      <th>Actions</th>
+      <th>Created on</th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +14,7 @@
         <td><%= link_to post.title, post_path(post) %></td>
         <td><%= post.created_at %></td>
         <td>
-          <%= link_to 'Edit', edit_post_path(post), :class => 'btn btn-mini' %>
+        
         </td>
       </tr>
     <% end %>

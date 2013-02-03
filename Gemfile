@@ -8,6 +8,10 @@ gem 'rails', '3.1.3'
 gem 'sqlite3'
 gem 'pg'
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem "haml-rails"
+gem "client_side_validations"
+gem 'gmaps4rails'
+gem 'devise'
 
 
 
@@ -39,7 +43,11 @@ gem 'foreigner'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
+gem "rspec-rails", :group => [:test, :development]
 group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
 end
