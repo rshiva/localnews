@@ -26,6 +26,7 @@
 	<%= f.fields_for :location do |builder| %>
 	<%=  render 'location_fields',f: builder %>
 	<% end%>
+  
 	
     <div class="form-actions">
       <%= f.submit nil, :class => 'btn btn-primary' %>
