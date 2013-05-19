@@ -20,8 +20,8 @@ group :assets do
   gem 'sass-rails',   '~> 3.1.5'
   gem 'coffee-rails', '~> 3.1.1'
   gem 'uglifier', '>= 1.0.3'
-  gem 'twitter-bootstrap-rails'
 end
+ gem 'twitter-bootstrap-rails' #heroku fix 
 
 
 
@@ -46,7 +46,7 @@ group :test do
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
   gem "factory_girl_rails"
-  #gem "capybara"
+  gem "capybara"
   gem "guard-rspec"
   gem 'rb-fsevent', '~> 0.9.1'
 end
