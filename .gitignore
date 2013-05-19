@@ -12,6 +12,7 @@
 
 # Ignore all logfiles and tempfiles.
 .bundle
+public/system/posts/news_photos
 db/*.sqlite3*
 log/*.log
 *.log

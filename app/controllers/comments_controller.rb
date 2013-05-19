@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :login_required ,:except => [:show]
+  before_filter :authenticate_user! ,:except => [:show]
   
   def new
     @post=Post.find(params[:post_id])

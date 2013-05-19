@@ -80,7 +80,9 @@ Devise.setup do |config|
   # config.confirm_within = 2.days
 
   #Defines which key will be used when confirming an account
-   config.confirmation_keys = [ :email ]
+   #config.confirmation_keys = [ :email ]
+   config.reset_password_keys = [ :login ]
+   config.confirmation_keys = [ :login ]
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
