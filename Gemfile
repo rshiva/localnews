@@ -25,6 +25,7 @@ group :assets do
 end
 
  gem 'twitter-bootstrap-rails' #heroku fix 
+ gem 'newrelic_rpm'
 
 
 
@@ -59,3 +60,4 @@ group :development do
   gem 'binding_of_caller'
   gem 'meta_request'
 end
+
